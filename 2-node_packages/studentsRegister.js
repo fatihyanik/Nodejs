@@ -27,7 +27,7 @@ rl.question('please enter your first name:\n', firtsName=>{
  */
 
 //const fs = require("fs");
-let myObj = {};
+/* let myObj = {};
 const fs = require("fs");
 const readline = require("readline");
 const rl = readline.createInterface({
@@ -52,14 +52,14 @@ fs.readFile("./students.json", (error, data) => {
             grades: grades,
           };
           students.push(data);
-          // myObj=data;
-          //appendFile("./students.json",myObj.toString())
+          myObj=data;
+          appendFile("./students.json", myObj.toString());
           fs.writeFile("./students.json", JSON.stringify(students), (error) => {
             if (error) throw error;
             console.log("file saved");
             rl.close();
           });
-          process.exit()
+          process.exit();
           rl.close();
         });
       });
@@ -75,7 +75,98 @@ function appendFile(fileName, data) {
   if (true) {
     fs.appendFile(fileName, `\n${data}`, (error) => {
       if (error) throw error;
-      console.log(`${fileName} was appended successfuly)`);
+      console.log(`${fileName} was appended successfully)`);
     });
   }
+} */
+const fs = require("fs");
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+function getEntry(message) {
+  return new Promise((resolve, reject) => {
+    rl.question(message, (data) => {
+      if (data === "exit") {
+        reject("closed by the user");
+      } else {
+        resolve(data);
+      }
+    });
+  });
 }
+
+function save(obj) {
+  const jsonText = fs.readFileSync("students.json", "utf8");
+  let arr;
+  if (jsonText.trim() === "") {
+    arr = [];
+  } else {
+    arr = JSON.parse(jsonText);
+  }
+  // add the obj to arr
+  arr.push(obj);
+  fs.writeFileSync("students.json", JSON.stringify(arr));
+  return arr;
+}
+
+async function ask() {
+  try {
+    const firstName = await getEntry("enter your first name\n");
+    const lastName = await getEntry("enter your last name\n");
+    // validate the age
+    let age;
+    let ageCounter = 0;
+    do {
+      if(ageCounter === 5){
+        console.log("maximum tries number has reached");
+        process.exit();
+      }
+      age = await getEntry("enter your age\n");
+      ageCounter++;
+    } while (age < 18 || age > 100 || isNaN(age));
+    // validate grades
+    let grades;
+    do {
+      grades = await getEntry("enter your grades\n");
+    } while (grades < 0 || grades > 100 || isNaN(grades));
+    // create an object
+    const obj = {
+      firstName,
+      lastName,
+      age,
+      grades,
+    };
+    console.log(obj);
+    const allData = save(obj);
+    console.log(allData);
+    process.exit();
+  } catch (error) {
+    console.log(error);
+    process.exit();
+  }
+  /*   rl.question("enter your first name", firstName => {
+    rl.question("enter your last name", lastName => {
+      rl.question("enter your age", age => {
+        rl.question("enter your grades", grade =>{
+
+        })
+      })
+    })
+  }) */
+
+  // call promise using then, catch
+  // getEntry('enter your first name\n').then(firstName => {
+  //   getEntry('enter your lastName\n').then(lastName => {
+  //     console.log(firstName, lastName);
+  //   }).catch(error => {
+  //     console.log(error);
+  //   })
+  // }).catch(error => {
+  //   console.log(error);
+  // })
+}
+
+ask();
