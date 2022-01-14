@@ -80,6 +80,7 @@ function appendFile(fileName, data) {
   }
 } */
 const fs = require("fs");
+// to make terminal as in\output
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
