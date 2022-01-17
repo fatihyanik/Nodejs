@@ -1,1 +1,9 @@
-{"host":"user-thinkpad-l15-gen-1:3000","connection":"keep-alive","cache-control":"max-age=0","save-data":"on","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Linux; Android 11; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.87 Mobile Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","accept-encoding":"gzip, deflate","accept-language":"en,de-DE;q=0.9,de;q=0.8,en-GB;q=0.7,tr-TR;q=0.6,tr;q=0.5,en-US;q=0.4"}
+{
+  "host": "user-thinkpad-l15-gen-1:3000",
+  "connection": "keep-alive",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Mobile Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+  "accept-encoding": "gzip, deflate",
+  "accept-language": "en,de-DE;q=0.9,de;q=0.8,en-GB;q=0.7,tr-TR;q=0.6,tr;q=0.5,en-US;q=0.4"
+}
