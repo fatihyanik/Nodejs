@@ -1,0 +1,33 @@
+[
+  {
+    "id": 0,
+    "first_name": "John",
+    "last_name": "Smith",
+    "age": 30
+  },
+  {
+    "id": 1,
+    "first_name": "Hans",
+    "last_name": "Mo",
+    "age": 30
+  },
+  {
+    "id": 2,
+    "first_name": "Rami",
+    "last_name": "DCI",
+    "age": 30
+  },
+  {
+    "id": 3,
+    "first_name": "Ahmad",
+    "last_name": "Osman",
+    "age": 30
+  },
+  {
+    "id": 4,
+    "first_name": "Mostafa",
+    "last_name": "Othman",
+    "age": 30
+  }
+
+]
