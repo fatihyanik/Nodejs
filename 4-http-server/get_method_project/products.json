@@ -108,5 +108,25 @@
     "fuel": "benzin",
     "prise": 3200,
     "doors": 4
+  },
+  {
+    "brand": "asa",
+    "model": "",
+    "power": "",
+    "gear": "",
+    "fuel": "",
+    "prise": "",
+    "doors": "",
+    "id": 11
+  },
+  {
+    "brand": "aaa",
+    "model": "",
+    "power": "",
+    "gear": "",
+    "fuel": "",
+    "prise": "",
+    "doors": "",
+    "id": 12
   }
 ]
