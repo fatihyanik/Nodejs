@@ -1,1 +1,14 @@
-[{"userName":"fatih","password":"$2b$10$w535AT1ng4KNzH6hKKtZbOYQWJ3.E/poZh5lMo5ydSknzZgs7dSFS"},{"userName":"fatma","password":"$2b$10$gR4UaNd/YB022SGczJD0PeCEKpPQ.BTeZ5q4Aesny1dgrMp49Qvbe"}]
+[
+  {
+    "userName": "fatih",
+    "password": "$2b$10$w535AT1ng4KNzH6hKKtZbOYQWJ3.E/poZh5lMo5ydSknzZgs7dSFS"
+  },
+  {
+    "userName": "fatma",
+    "password": "$2b$10$gR4UaNd/YB022SGczJD0PeCEKpPQ.BTeZ5q4Aesny1dgrMp49Qvbe"
+  },
+  {
+    "userName": "carlos",
+    "password": "$2b$10$8yBgiHUS8B.HktQ8mF7dm.q1C9bjzBnL0LtZFKD4VvyuSOv1Npxf2"
+  }
+]
