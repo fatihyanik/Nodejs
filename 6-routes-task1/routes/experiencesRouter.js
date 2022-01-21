@@ -1,17 +1,20 @@
-const express = require('express');
+const express = require("express");
+const plRouter = require("./plRouter");
 
 const experiencesRouter = express.Router();
-experiencesRouter.get("/", (req,res)=>{
-    res.send('this is experiences page');
-})
-experiencesRouter.get("/frontend", (req,res)=>{
-    res.send('<h1>this is my front end skills</h1>');
-})
-experiencesRouter.get("/backend", (req,res)=>{
-    res.send('this is my back end skills');
-})
-experiencesRouter.get("/programming-language", (req,res)=>{
-    res.send('programming language that i know');
-})
+experiencesRouter.use("/programming-languages", plRouter);
+
+experiencesRouter.get("/", (req, res) => {
+  res.send("this my experiences page");
+});
+experiencesRouter.get("/frontend", (req, res) => {
+  res.send("my front end skills");
+});
+experiencesRouter.get("/backend", (req, res) => {
+  res.send("my back end skills");
+});
+// experiencesRouter.get('/programming-languages', (req, res) => {
+//     res.send('my programming languages skills')
+// })
 
 module.exports = experiencesRouter;
