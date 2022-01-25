@@ -14,50 +14,26 @@
       <!-- navbar starts -->
       <%- include('partials/navbar')%>
       <!-- navbar end -->
-      <h1><%= title%></h1>
+      <h1 class="text-center"><%= title%></h1>
       <%= content%> 
     
     <div class="row">
         <!-- example for each one product -->
-        <div class="col-md-4">
-            <h2>Product name</h2>
+        <% data.forEach(item=>{ %>
+        <div class="col-md-4 mb-4 products">
+            <h2><%= item.brand%></h2>
             <ul>
-                <li>Brand: Brand</li>
-                <li>Model: Model</li>
-                <li>Power: power</li>
-                <li>Gear: Gear</li>
-                <li>Fuel: fuel</li>
-                <li>prise: prise</li>
-                <li>Doors: doors</li>
-                <a href="">Read more</a>
+                <li>Brand: <%= item.brand%></li>
+                <li>Model: <%= item.model%></li>
+                <li>Power: <%= item.power%></li>
+                <li>Gear: <%= item.gear%></li>
+                <li>Fuel: <%= item.fuel%></li>
+                <li>prise: <%= item.prise%></li>
+                <li>Doors: <%= item.doors%></li>
+                <a class="btn btn-success" href="/products?id=<%= item.id%>">Read more</a>
             </ul>
         </div>
-        <div class="col-md-4">
-            <h2>Product name</h2>
-            <ul>
-                <li>Brand: Brand</li>
-                <li>Model: Model</li>
-                <li>Power: power</li>
-                <li>Gear: Gear</li>
-                <li>Fuel: fuel</li>
-                <li>prise: prise</li>
-                <li>Doors: doors</li>
-                <a href="">Read more</a>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <h2>Product name</h2>
-            <ul>
-                <li>Brand: Brand</li>
-                <li>Model: Model</li>
-                <li>Power: power</li>
-                <li>Gear: Gear</li>
-                <li>Fuel: fuel</li>
-                <li>prise: prise</li>
-                <li>Doors: doors</li>
-                <a href="">Read more</a>
-            </ul>
-        </div>
+<% }) %>
     </div>
 </div>
     <script>

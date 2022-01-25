@@ -5,5 +5,9 @@
 
 .light {
   background-color: #e2e2e2;
-  color: #2e2e2e;
+  color: hsl(0, 0%, 18%);
+}
+.products {
+  border: 1px orange solid;
+  border-radius: 20px;
 }

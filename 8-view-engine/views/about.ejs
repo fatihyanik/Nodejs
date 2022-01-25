@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title%></title>
     <%- include('partials/links')%>
-  </head>
-  <body class="<%= dark==true? 'dark': 'light'%>">
+</head>
+<body class="<%= dark==true? 'dark': 'light'%>">
+
     <div class="container">
-      <!-- navbar starts -->
-      <%- include('partials/navbar')%>
-      <!-- navbar end -->
-      <h1><%= title%></h1>
-      <%= content%>
+            <!-- navbar starts -->
+<%- include('partials/navbar')%>
+<!-- navbar end -->
+        <h1 class="text-center"><%= title%></h1>
+        <%= content%>
     </div>
-  </body>
+
+</body>
 </html>
