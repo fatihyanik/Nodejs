@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title%></title>
+    <title>Services Page</title>
+    <%- include('partials/links')%>
 </head>
-<body>
-    <h1><%= title%></h1>
-    <%= content%>
+<body class="<%= dark==true? 'dark': 'light'%>">
+
+    <div class="container">
+            <!-- navbar starts -->
+<%- include('partials/navbar')%>
+<!-- navbar end -->
+        <h1><%= title%></h1>
+        <%= content%>
+    </div>
+
 </body>
 </html>

@@ -5,30 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title%></title>
-    <style>
-        .dark{
-            background-color: #2e2e2e;
-            color: #e2e2e2;
-        }
-        .light{
-            background-color: #e2e2e2;
-            color: #2e2e2e;
-        }
-        
-
-    </style>
+    <!-- Import css, js links -->
+    <%- include('partials/links')%>
   </head>
-  <body class="<%= dark==true ? "dark" : "light"%>">
-    <h1><%= title%></h1>
-    <%= content%> <% if(dark){%>
-    <h2>Dark Mode</h2>
-    <% }else{%>
-    <h2>Light Mode</h2>
-    <% }%>
-    <ul>
+
+  <body class="<%= dark==true? 'dark': 'light'%>">
+    <div class="container">
+      <!-- navbar starts -->
+      <%- include('partials/navbar')%>
+      <!-- navbar end -->
+      <h1 class="text-center"><%= title%></h1>
+      <%= content%> <% if(dark){%>
+      <h2>Dark Mode</h2>
+      <% }else{%>
+      <h2>Light Mode</h2>
+      <%}%>
+      <ul>
         <% data.forEach(car=>{ %>
-            <li <%= car.model >= 2010 ? 'style=color:red': ""%>>Brand: <%= car.name%> | Model: <%= car.model%></li>
-            <%})%>
-    </ul>
+        <li <%="car.model">=2010?'style=color:red':''%>>Brand: <%= car.name%> | Model: <%=
+          car.model%>
+        </li>
+        <%})%>
+      </ul>
+    </div>
+    <script>
+      // alert('<%= title%>')
+    </script>
   </body>
 </html>
