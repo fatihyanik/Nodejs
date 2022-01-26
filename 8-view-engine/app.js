@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const fs = require('fs')
+const {log} = require('console')
 const app = express();
 // setting the port
 app.set("port", process.env.PORT || 3000);
@@ -67,10 +68,31 @@ app.get("/services", (req, res) => {
 
 app.get("/products", (req, res) => {
   // to read GET method params req.query
-  console.log(req.query)
+  log(req.query)
   // to read POST data req.body
   // res.sendFile(__dirname+'/services.html')
-  fs.readFile('./products.json', (error, data)=>{
+  if(req.query.id){
+fs.readFile('./products.json', (error, data)=>{
+  if(error){
+    res.render('index', {
+      title: "error",
+      dark: req.query.dark==="true" ? true : false,
+      content: "Internal Server Error",
+      data: null
+    })
+  }else{
+    let product = JSON.parse(data.toString()).find(p=>p.id == req.query.id)
+    log(product)
+    res.render('product', {
+      title: product? product.brand: "Not Found",
+      content: product?`This is ${product.brand}'s page`:"Not found",
+      dark: req.query.dark==="true" ? true : false,
+      data: product
+    })
+  }
+})
+  }else{
+      fs.readFile('./products.json', (error, data)=>{
     if(error){
       res.render('index', {
         title: "error",
@@ -87,12 +109,14 @@ app.get("/products", (req, res) => {
       });
     }
   })
+  }
+
 
 });
 
 app.get("/api", (req, res) => {
   res.json([{
-    name: "Mostafa",
+    name: "Fatih",
     age: 30,
   }, ]);
 });

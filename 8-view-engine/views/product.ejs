@@ -19,21 +19,26 @@
     
     <div class="row">
         <!-- example for each one product -->
-        <% data.forEach(item=>{ %>
-        <div class="col-md-4 m-4 products">
-            <h2><%= item.brand%></h2>
+        
+        <div class="col-md-12 mb-4 products">
+            <% if(data){%>
+            <h2><%= data.brand%></h2>
             <ul>
-                <li>Brand: <%= item.brand%></li>
-                <li>Model: <%= item.model%></li>
-                <li>Power: <%= item.power%></li>
-                <li>Gear: <%= item.gear%></li>
-                <li>Fuel: <%= item.fuel%></li>
-                <li>prise: <%= item.prise%></li>
-                <li>Doors: <%= item.doors%></li>
-                <a class="btn btn-success" href="/products?id=<%= item.id%>">Read more</a>
+                <li>Brand: <%= data.brand%></li>
+                <li>Model: <%= data.model%></li>
+                <li>Power: <%= data.power%></li>
+                <li>Gear: <%= data.gear%></li>
+                <li>Fuel: <%= data.fuel%></li>
+                <li>prise: <%= data.prise%></li>
+                <li>Doors: <%= data.doors%></li>
+                <a class="btn btn-success" href="/products">Go To All Products</a>
             </ul>
+            <%}else{%>
+                <h2 class="text-danger">No Product found</h2>
+                <a class="btn btn-success" href="/products">Go To All Products</a>
+                <%}%>
         </div>
-<% }) %>
+
     </div>
 </div>
     <script>
