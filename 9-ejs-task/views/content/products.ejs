@@ -1,0 +1,22 @@
+<h1 class="display-4 text-center">Products Page</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="/products", method="GET">
+            <div class="form-group">
+                <label for="">Select Category</label>
+                <select class="form-select" name="category" id="">
+                    <option value="">All Category</option>
+                   
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <% data.forEach(product=>{%>
+       <div>
+           <%= product.category%>
+       </div>
+       <%})%>
+    </div>

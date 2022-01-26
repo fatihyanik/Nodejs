@@ -1,0 +1,69 @@
+[
+  {
+    "id": 0,
+    "category": "design",
+    "name": "Photoshop",
+    "version": "9.0.6",
+    "size": 800,
+    "author": "Adobe",
+    "link": "https://www.adobe.com/products/photoshop.html",
+    "logo": "https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/ps_appicon.svg",
+    "description": "Adobe Photoshop is a raster graphics editor developed and published by Adobe Inc. for Windows and macOS. It was originally created in 1988 by Thomas and John Knoll. Since then, the software has become the industry standard not only in raster graphics editing, but in digital art as a whole. The software's name has thus become a generic trademark, leading to its usage as a verb (e.g. \"to photoshop an image\", \"photoshopping\", and \"photoshop contest\") although Adobe discourages such use."
+  },
+  {
+    "id": 1,
+    "category": "programming",
+    "name": "Matlab",
+    "version": "8.4.6",
+    "size": 1200,
+    "author": "Cleve Moler",
+    "link": "https://www.mathworks.com/products/matlab.html",
+    "logo": "https://de.mathworks.com/help/examples/matlab/win64/MatlabLogoExample_08.png",
+    "description": "MATLAB is a proprietary multi-paradigm programming language and numeric computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages."
+  },
+  {
+    "id": 2,
+    "category": "programming",
+    "name": "Microsoft Visual Studio",
+    "version": "17.0.3",
+    "size": 14000,
+    "author": "Microsoft",
+    "link": "https://visualstudio.microsoft.com/",
+    "logo": "https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg",
+    "description": "Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs, as well as websites, web apps, web services and mobile apps. Visual Studio uses Microsoft software development platforms such as Windows API, Windows Forms, Windows Presentation Foundation, Windows Store and Microsoft Silverlight. It can produce both native code and managed code."
+  },
+  {
+    "id": 3,
+    "category": "programming",
+    "name": "PyCharm",
+    "version": "2021.3",
+    "size": 555,
+    "author": "JetBrains",
+    "link": "https://www.jetbrains.com/pycharm-edu/",
+    "logo": "https://www.jetbrains.com/company/brand/img/logo1.svg",
+    "description": "PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python programming language. It is developed by the Czech company JetBrains (formerly known as IntelliJ). It provides code analysis, a graphical debugger, an integrated unit tester, integration with version control systems (VCSes), and supports web development with Django as well as data science with Anaconda."
+  },
+  {
+    "id": 4,
+    "category": "game",
+    "name": "Resident Evil 7",
+    "version": "2021.3",
+    "size": 555,
+    "author": "Capcom",
+    "link": "https://www.residentevil7.com/",
+    "logo": "https://www.residentevil7.com/assets/images/index/bnr_village.jpg",
+    "description": "Resident Evil 7: Biohazard is a 2017 survival horror game developed and published by Capcom. A major installment in the Resident Evil series, the player controls Ethan Winters as he searches for his long-missing wife in a derelict plantation occupied by an infected family, solving puzzles and fighting enemies. Resident Evil 7 diverges from the more action-oriented Resident Evil 5 and Resident Evil 6, returning to the franchise's survival horror roots, emphasizing exploration. It is the first main series game to use a first-person view."
+  },
+  {
+    "id": 5,
+    "category": "education",
+    "name": "NI Multisim",
+    "version": "2021.3",
+    "size": 375,
+    "author": "Capcom",
+    "link": "http://www.ni.com/multisim/",
+    "logo": "https://digilent.com/blog/wp-content/uploads/2015/01/184_multisim_app_icon_ill.png?_ga=2.86063580.579634788.1643081841-1552017453.1643081841",
+    "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program which is part of a suite of circuit design programs, along with NI Ultiboard. Multisim is one of the few circuit design programs to employ the original Berkeley SPICE based software simulation. Multisim was originally created by a company named Electronics Workbench Group, which is now a division of National Instruments. Multisim includes microcontroller simulation (formerly known as MultiMCU), as well as integrated import and export features to the printed circuit board layout software in the suite, NI Ultiboard."
+  }
+]
+
