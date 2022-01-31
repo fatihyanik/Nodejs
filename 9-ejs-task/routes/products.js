@@ -1,38 +1,63 @@
 const express = require("express");
 const route = express.Router();
 const fs = require("fs");
+const path = require('path')
 
 route.get("/", (req, res) => {
-  //console.log(req.query)
-  if (!req.query.category) {
-    fs.readFile("./data/products.json", (error, data) => {
-      if (error) {
-        res.render("mainTemplate", {
+    // if asking for some categories
+    if(req.query['category']){
+        fs.readFile(path.join(__dirname, '../data/products.json'), (error, data)=>{
+            if(error){
+                res.render("mainTemplate", {
+                    title: "ERROR",
+                    content: "error",
+                    error: error.message
+                  });
+              }else{
+                let categories = []
+                let products = JSON.parse(data.toString())
+                products.forEach(product=>{
+                    // check if product.category NOT exist in categories
+                    if(!categories.includes(product.category))
+                        categories.push(product.category)
+                })
+                res.render("mainTemplate", {
+                    title: "Products Page",
+                    content: "products",
+                    categories: categories,
+                    data: req.query['category'] == 'all'? products: products.filter(product=> product.category == req.query['category']),
+                    selected_item: req.query['category']
+                  });
+              }
+        })
+    }else{
+// 1- read data file
+fs.readFile(path.join(__dirname, '../data/products.json'), (error, data) => {
+    if(error){
+      res.render("mainTemplate", {
+          title: "ERROR",
+          content: "error",
+          error: error.message
+        });
+    }else{
+      let categories = []
+      let products = JSON.parse(data.toString())
+      products.forEach(product=>{
+          // check if product.category NOT exist in categories
+          if(!categories.includes(product.category))
+              categories.push(product.category)
+      })
+      res.render("mainTemplate", {
           title: "Products Page",
           content: "products",
-          category: null
+          categories: categories,
+          data: products,
+          selected_item: 'all'
         });
-      }else{
-          console.log(data.toString());
-          const tempArr = []
-          const categories = JSON.parse(data.toString()).filter(product => {
-            if(tempArr.indexOf(product.category) === -1){
-              tempArr.push(product.category)
-              return true
-            }
-            return false
-          })
-         res.render('mainTemplate', {
-             title: "Products Page",
-             content: "products",
-             data: categories
-
-         })
-      }
-    });
-  }else{
-
-  }
+    }
+});
+    }
+  
 });
 
 module.exports = route;

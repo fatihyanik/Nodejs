@@ -1,24 +1,50 @@
 <h1 class="display-4 text-center">Products Page</h1>
-
 <div class="row">
     <div class="col-md-12">
-        <form action="/products", method="GET">
-            <div class="form-group">
-                <label for="">Select Category</label>
-                <select class="form-select" name="category" id="">
-                    <option value="">All Category</option>
-                    <% data.forEach((product) => {%>
-       
-                        <option value="<%= product.category%>">
-                            <%= product.category%>
-                        </option>
-                        <%})%>
-                   
+        <form action="/products" method="GET">
+            <div class="form-control">
+                <label for="category">Select Category</label>
+                <select name="category" id="" class="form-select" onchange="this.form.submit()">
+                    <option value="all">All categories</option>
+                    <% categories.forEach(category=>{%>
+                        <%if(selected_item){%>
+                            <option <%= selected_item == category? 'selected':'' %> value="<%= category%>"><%= category%></option>
+                            <%}else{%>
+                               <option value="<%= category%>"><%= category%></option> 
+                               <%}%>
+                        <!-- <option <%= selected_item? selected_item === category? 'selected':'':'' %> value="<%= category%>"><%= category%></option> -->
+                    <%})%>
                 </select>
             </div>
         </form>
     </div>
 </div>
-<div>
-    
+<!-- display all products -->
+<% let items = 3 %>
+    <!-- repeat this div -->
+    <% data.forEach((product, index)=>{ %>
+        <% if(index % items == 0){ %>
+            <% if(index >0){ %>
+                </div>
+                <hr>
+            <%}%>
+            <div class="row">
+        <%}%>
+    <div class="col-md-<%= 12/items%> mt-4">
+        <div class="card">
+            <div class="card-header bg-dark"><%= product.name%></div>
+            <div class="card-body text-dark">
+                <blockquote class="blockquote mb-0">
+                    <img src="<%= product.logo%>" alt="" class="product-logo">
+                    <p>Name: <%= product.name%></p>
+                    <p>Version: <%= product.version%></p>
+                    <p>Author: <%= product.author%></p>
+                    <a href="#" class="btn btn-success">Read More</a>
+                </blockquote>
+            </div>
+        </div>
     </div>
+    <% if(index == data.length-1){ %>
+    </div>
+    <%}%>
+    <%})%>
