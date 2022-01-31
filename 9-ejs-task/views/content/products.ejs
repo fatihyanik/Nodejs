@@ -7,6 +7,12 @@
                 <label for="">Select Category</label>
                 <select class="form-select" name="category" id="">
                     <option value="">All Category</option>
+                    <% data.forEach((product) => {%>
+       
+                        <option value="<%= product.category%>">
+                            <%= product.category%>
+                        </option>
+                        <%})%>
                    
                 </select>
             </div>
@@ -14,9 +20,5 @@
     </div>
 </div>
 <div>
-    <% data.forEach(product=>{%>
-       <div>
-           <%= product.category%>
-       </div>
-       <%})%>
+    
     </div>

@@ -13,11 +13,19 @@ route.get("/", (req, res) => {
           category: null
         });
       }else{
-          console.log(data.toString())
+          console.log(data.toString());
+          const tempArr = []
+          const categories = JSON.parse(data.toString()).filter(product => {
+            if(tempArr.indexOf(product.category) === -1){
+              tempArr.push(product.category)
+              return true
+            }
+            return false
+          })
          res.render('mainTemplate', {
              title: "Products Page",
              content: "products",
-             data: JSON.parse(data.toString())
+             data: categories
 
          })
       }
