@@ -95,7 +95,7 @@
                               <textarea class="form-control form-control-comment" id="message"></textarea>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-green">Contact us</button>
+                                <button id="submit-button" class="btn btn-green">Contact us</button>
                             </div>
                         </form>
                     </div>
@@ -144,6 +144,44 @@
     <script src="assets/js/jquery.shuffle.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        const nameInput = document.querySelector('#name');
+        const emailInput= document.querySelector('#email');
+        const contactSelect = document.querySelector('#subject');
+        const messageInput = document.querySelector('#message');
+        const submitButton = document.querySelector('#submit-button');
+
+        // add click event to submit button
+        submitButton.addEventListener('click', async(e) =>{
+            // to prevent to page to be reloaded on button click
+            e.preventDefault();
+            const data = {
+                name: nameInput.value,
+                email: emailInput.value,
+                department: contactSelect.value,
+                message: messageInput.value
+            }
+
+            // send data using GET request
+            // ww.ff.com/?name=fatih&email=sss@ff.com&
+                try{
+                    const response = await fetch('/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    const answer = await response.json()
+                    // deal with the answer
+                    console.log(answer)
+                }catch(error){
+                    console.log(error);
+                }
+
+        })
+  
+    </script>
   
 </body>
 </html>

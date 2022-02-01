@@ -1,1 +1,2 @@
-noe_modules
+node_modules
+.env
