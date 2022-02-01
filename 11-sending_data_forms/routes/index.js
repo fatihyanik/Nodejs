@@ -56,7 +56,13 @@ router.get('/add', (req,res)=>{
 })
 
 router.post('/add', (req,res)=>{
-    res.json(req.body)
+    // POST Request ===> req.body
+    // res.json(req.body)
+    Persons.addPerson(req.body).then(()=>{
+      res.redirect('/persons')
+    }).catch(error=>{
+      res.json(error)
+    })
 })
 
 
