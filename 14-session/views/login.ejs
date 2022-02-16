@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <label>user name</label>
     <input id="usernameInp" type="text" placeholder="user name" />
-    <br>
+    <br />
     <label>password</label>
     <input id="passwordInp" type="password" placeholder="password" />
-    <br>
+    <br />
     <button id="submitBtn">Login</button>
-</body>
+
+    <script>
+      // write the script to send username and password to /login route using fetch
+      // at login button click
+
+      const usernameInp = document.querySelector("#usernameInp");
+      const passwordInp = document.querySelector("#passwordInp");
+      const submitBtn = document.querySelector("#submitBtn");
+      submitBtn.addEventListener("click", async (e) => {
+        const data = {
+          username: usernameInp.value,
+          password: passwordInp.value,
+        };
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        if (result === "done") {
+          window.location = "/admin";
+        } else {
+          alert("wrong username or password, try again");
+        }
+      });
+    </script>
+  </body>
 </html>
