@@ -8,5 +8,29 @@
   </head>
   <body>
     <h1>Welcome Admin</h1>
+    <ul>
+      <li>
+        <a href="/admin/logout">logout</a>
+      </li>
+      <li>
+        <button id="logOutBtn">logout</button>
+      </li>
+    </ul>
+    <script>
+      // logout button event listener here
+      const logoutBtn = document.querySelector("#logOutBtn");
+      logoutBtn.addEventListener("click", async () => {
+        const response = await fetch("/admin/logout", {
+          method: "POST",
+        });
+        const result = await response.json();
+        if (result === "done") {
+          alert('you are logged out and will be redirected to login page');
+          setTimeout(()=>{
+            window.location = "/login";
+          }, 2000)
+        }
+      });
+    </script>
   </body>
 </html>

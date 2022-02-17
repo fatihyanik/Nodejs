@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 // configure session
 app.use(session({
   secret: 'my website',
-  cookie: {maxAge: 10 * 1000} // maxAge should be in millisecond
+  cookie: {maxAge: 5 * 60 * 1000} // maxAge should be in millisecond
 }))
 
 app.use(express.static(path.join(__dirname, 'public')));

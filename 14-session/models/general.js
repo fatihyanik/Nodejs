@@ -1,5 +1,9 @@
 const login = (req, res) => {
-  res.render("login");
+  if(req.session.user){
+    res.redirect('/admin')
+  }else{
+    res.render("login");
+  }
 };
 
 const aboutUs = (req, res) => {
