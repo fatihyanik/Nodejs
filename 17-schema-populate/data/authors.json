@@ -1,0 +1,288 @@
+[
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82c"
+    },
+    "name": "Donavan Velasquez",
+    "email": "velasquez@gmail.com",
+    "address": {
+      "country": "Spain",
+      "city": "Barcelona"
+    },
+    "phone": "0049120213",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82d"
+    },
+    "name": "Aliya Kelly",
+    "email": "kelly@gmail.com",
+    "address": {
+      "country": "USA",
+      "city": "Arizona"
+    },
+    "phone": "0049562301",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82e"
+    },
+    "name": "Gwendolyn Rowe",
+    "email": "rowe@gmail.com",
+    "address": {
+      "country": "France",
+      "city": "Paris"
+    },
+    "phone": "0049965420",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82f"
+    },
+    "name": "Savion Browning",
+    "email": "browning@gmail.com",
+    "address": {
+      "country": "Germany",
+      "city": "Kiel"
+    },
+    "phone": "0049512423",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff830"
+    },
+    "name": "Jenna Ellison",
+    "email": "ellison@gmail.com",
+    "address": {
+      "country": "Niederlande",
+      "city": "Amsterdam"
+    },
+    "phone": "0049965842",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff831"
+    },
+    "name": "Alijah Flores",
+    "email": "flores@gmail.com",
+    "address": {
+      "country": "Egypt",
+      "city": "Cairo"
+    },
+    "phone": "0049753951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff832"
+    },
+    "name": "Paola Schwartz",
+    "email": "schwartz@gmail.com",
+    "address": {
+      "country": "Germany",
+      "city": "Mecklenburg"
+    },
+    "phone": "0049654235",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff833"
+    },
+    "name": "Stephanie May",
+    "email": "may@gmail.com",
+    "address": {
+      "country": "Austria",
+      "city": "Vienna"
+    },
+    "phone": "0049234679",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff834"
+    },
+    "name": "Meghan Abbott",
+    "email": "abbott@gmail.com",
+    "address": {
+      "country": "Italy",
+      "city": "Catania"
+    },
+    "phone": "0049213652",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82a"
+    },
+    "name": "Matilda Boyd",
+    "email": "mbyd@gmail.com",
+    "address": {
+      "country": "Germany",
+      "city": "Hamburg"
+    },
+    "phone": "0049565656",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216c80dd6bbeb12f41ff82b"
+    },
+    "name": "Nick Ortega",
+    "email": "ortega@gmail.com",
+    "address": {
+      "country": "Germany",
+      "city": "Berlin"
+    },
+    "phone": "0049020102",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3bc"
+    },
+    "name": "Phoenix Nolan",
+    "email": "nolan@gmail.com",
+    "address": {
+      "country": "Belize",
+      "city": "Belmopan"
+    },
+    "phone": "0049345656",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3bd"
+    },
+    "name": "Greta Bolton",
+    "email": "bolton@gmail.com",
+    "address": {
+      "country": "Cuba",
+      "city": "Havana"
+    },
+    "phone": "0049027777",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3be"
+    },
+    "name": "Shaniya Hammond",
+    "email": "hammond@gmail.com",
+    "address": {
+      "country": "Estonia",
+      "city": "Tallinn"
+    },
+    "phone": "0049660213",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3bf"
+    },
+    "name": "Alessandro Chung",
+    "email": "chung@gmail.com",
+    "address": {
+      "country": "Gambia",
+      "city": "Banjul"
+    },
+    "phone": "0049999901",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c0"
+    },
+    "name": "Trevon Pena",
+    "email": "pena@gmail.com",
+    "address": {
+      "country": "Guatemala",
+      "city": "Guatemala City"
+    },
+    "phone": "0049990900",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c1"
+    },
+    "name": "Gabrielle Pitts",
+    "email": "pitts@gmail.com",
+    "address": {
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    "phone": "0049533333",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c2"
+    },
+    "name": "Chad Hendricks",
+    "email": "hendricks@gmail.com",
+    "address": {
+      "country": "Maldives",
+      "city": "Male"
+    },
+    "phone": "0049909842",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c3"
+    },
+    "name": "Kyra Huang",
+    "email": "huang@gmail.com",
+    "address": {
+      "country": "Monaco",
+      "city": "Monaco"
+    },
+    "phone": "0049434551",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c4"
+    },
+    "name": "Josie Clements",
+    "email": "clements@gmail.com",
+    "address": {
+      "country": "New Zealand",
+      "city": "Wellington"
+    },
+    "phone": "0049545435",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c5"
+    },
+    "name": "Chris Knight",
+    "email": "knight@gmail.com",
+    "address": {
+      "country": "Austria",
+      "city": "Vienna"
+    },
+    "phone": "0049545439",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6216cbdbbaa4dc2495acc3c6"
+    },
+    "name": "Alaina Patel",
+    "email": "patel@gmail.com",
+    "address": {
+      "country": "Slovenia",
+      "city": "Ljubljana"
+    },
+    "phone": "0049665652",
+    "__v": 0
+  }
+]

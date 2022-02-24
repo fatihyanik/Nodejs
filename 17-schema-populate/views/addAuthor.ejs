@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Author</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background-color: #2e2e2e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Add Author</h1>
+    <div class="container">
+        <div class="col-md-6">
+            <form action="/admin/addauthor" method="post" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" name="name" id="" placeholder="Name" class="form-control" required >
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Country</label>
+                    <input type="text" name="country" id="" class="form-control" placeholder="Country" required>
+                </div>
+                <div class="form-group">
+                    <label for="">City</label>
+                    <input type="text" name="city" id="" class="form-control" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="number" name="phone" id="" class="form-control" placeholder="Phone">
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-success" >Send</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="spinner-border m-5 " style="display: none;"  id="loader" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </div>
+    </div>
+
+
+    <div id="message" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-dark" >Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-dark" id="messageText">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        function submitForm(e){
+            e.preventDefault()
+            let form = $(e.target)
+            console.log(form.serialize())
+            // show loader
+            $("#loader").show()
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: response=>{
+                    if(response.success){
+                        $('#message').modal('show')
+                        $(".modal-title").html("success")
+                        $("#messageText").html(response.success)
+                        // hide loader
+                        $("#loader").hide()
+                        console.log(response.result)
+                    }else{
+                        $('#message').modal('show')
+                        $(".modal-title").html("Error")
+                        $("#messageText").html(response.error)
+                        $("#loader").hide()
+                    }
+                },
+                error: (xhr, status, error)=>{
+                    console.log(error)
+                }
+            })
+        }
+    </script>
+</body>
