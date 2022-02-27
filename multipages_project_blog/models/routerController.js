@@ -1,6 +1,7 @@
 // import emailSender
 const emailSender = require("./emailSender");
 const {validationResult} = require('express-validator')
+const {registerUser} = require('./db')
 
 const getHome = (req, res) => {
   res.render("index");
@@ -45,17 +46,17 @@ const postRegister = (req, res) => {
   // check if posted data is valid 
   const errors = validationResult(req)
   if(!errors.isEmpty()){
-      res.json({ message: "validation error" })
+      res.json({ message: errors })
   } else {
       console.log(req.body);
-      //const {fName, lName, username, email, password, birthDate} = req.body
-      //registerUser(fName, lName, username, email, password, birthDate).then((result)=>{
-         // console.log(result);
+      const {fName, lName, username, email, password, birthDate} = req.body
+      registerUser(fName, lName, username, email, password, birthDate).then((result)=>{
+          console.log(result);
           res.json({ message: 'done' })
-    //  }).catch(error =>{
-    //      console.log(error);
-    //      res.json({message: error})
-    //  })
+      }).catch(error =>{
+          console.log(error);
+          res.json({message: error})
+      })
   }
   
 }
@@ -71,5 +72,5 @@ module.exports = {
   getUiElements,
   postContact,
   getRegister,
-  postRegister
+  postRegister,
 };
