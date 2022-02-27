@@ -1590,3 +1590,9 @@ a.linkedin-bg:hover {
   height: 500px;
   width: 100%
 }
+
+.pristine-error{
+    color:#a94442;
+    background-color:#f2dede;
+    border-color:#ebccd1
+}

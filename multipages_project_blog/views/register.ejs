@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Contact | Agency Perfect</title>
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+
+    <!-- Favicon
+    ================================================== -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon.png"
+    />
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header id="masthead" class="site-header site-header-white">
+      <!--NAVBAR START-->
+      <%- include('partials/navbar.ejs', {page: 'register' })%>
+      <!-- NAVBAR END-->
+    </header>
+    <!-- /#mastheaed -->
+
+    <div id="hero" class="hero overlay subpage-hero contact-hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Register</h1>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Register</li>
+          </ol>
+        </div>
+        <!-- /.hero-text -->
+      </div>
+      <!-- /.hero-content -->
+    </div>
+    <!-- /.hero -->
+
+    <main id="main" class="site-main">
+      <section class="site-section subpage-site-section section-contact-us">
+        <div class="container-fluid tm-mt-60">
+          <div class="row tm-mb-50">
+            <div class="col-lg-12 col-12 mb-5">
+              <form id="register-form" action="" method="POST" class="mx-auto">
+                <div class="form-group">
+                  <input
+                    id="fname-input"
+                    minlength="2"
+                    maxlength="50"
+                    type="text"
+                    class="form-control rounded-0"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="lname-input"
+                    minlength="2"
+                    maxlength="50"
+                    type="text"
+                    class="form-control rounded-0"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="username-input"
+                    minlength="4"
+                    maxlength="50"
+                    type="text"
+                    class="form-control rounded-0"
+                    placeholder="user Name"
+                    required
+                    pattern="/^[a-zA-Z]+$/g"
+                    data-pristine-pattern-message="username should contain only letters"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="email-input"
+                    type="email"
+                    minlength="5"
+                    maxlength="50"
+                    class="form-control rounded-0"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="password-input"
+                    type="password"
+                    minlength="8"
+                    maxlength="20"
+                    class="form-control rounded-0"
+                    placeholder="password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="repassword-input"
+                    type="password"
+                    data-pristine-equals="#password-input"
+                    class="form-control rounded-0"
+                    placeholder="re-password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="birthdate-input"
+                    type="date"
+                    class="form-control rounded-0"
+                    required
+                  />
+                </div>
+                <div class="text-center">
+                  <button id="register-button" class="btn btn-green">
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.section-contact-us -->
+    </main>
+    <!-- /#main -->
+
+    <!-- FOOTER START -->
+    <%- include('partials/footer.ejs')%>
+    <!-- FOOTER END-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <script src="assets/js/jquery.countTo.min.js"></script>
+    <script src="assets/js/jquery.shuffle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/pristine/dist/pristine.min.js"></script>
+    <script>
+      $(window).on("load", function () {
+        $("body").addClass("loaded");
+      });
+
+      // add event listener to register button
+      const registerBtn = document.getElementById("register-button");
+      const fnameInp = document.getElementById("fname-input");
+      const lnameInp = document.getElementById("lname-input");
+      const usernameInp = document.getElementById("username-input");
+      const emailInp = document.getElementById("email-input");
+      const passwordInp = document.getElementById("password-input");
+      const birthDateInp = document.getElementById("birthdate-input");
+      const registerForm = document.getElementById("register-form");
+
+      registerBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const pristine = new Pristine(registerForm);
+                    const valid = pristine.validate();
+                    console.log(valid);
+                    if(valid) {
+                        try{
+                            const data = {
+                                fName: fnameInp.value,
+                                lName: lnameInp.value,
+                                username: usernameInp.value,
+                                email: emailInp.value,
+                                password: passwordInp.value,
+                                birthDate: birthDateInp.value
+                            }
+                            const response = await fetch('/register',{
+                                method: 'POST',
+                                headers:{
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(data)
+                            });
+                            const result = await response.json();
+                            console.log(result);
+                        } catch(error){
+                            
+                        }
+                    }
+                })
+    </script>
+  </body>
+</html>
