@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Author</title>
+    <title>Add Book</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
 
     <style>
@@ -16,29 +16,34 @@
 </head>
 <body>
     <%- include('partials/navbar') %>
-    <h1 class="text-center">Add Author</h1>
+    <h1 class="text-center">Add Book</h1>
     <div class="container">
         <div class="col-md-6">
-            <form action="/admin/addauthor" method="post" onsubmit="submitForm(event)">
+            <form action="/admin/addbook" method="post" onsubmit="submitForm(event)">
                 <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" name="name" id="" placeholder="Name" class="form-control" required >
+                    <label for="">Title</label>
+                    <input type="text" name="title" id="" placeholder="Title" class="form-control" required >
                 </div>
                 <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
+                    <label for="">Author</label>
+                    <select name="author" id="" class="form-select" required>
+                        <option value="">Select an Author</option>
+                        <% authors.forEach(author=>{ %>
+                            <option value="<%= author.id%>"><%= author.name%></option>
+                        <%})%>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="">Country</label>
-                    <input type="text" name="country" id="" class="form-control" placeholder="Country" required>
+                    <label for="">Pages</label>
+                    <input type="number" name="pages" id="" class="form-control" placeholder="Pages Count" required>
                 </div>
                 <div class="form-group">
-                    <label for="">City</label>
-                    <input type="text" name="city" id="" class="form-control" placeholder="City" required>
+                    <label for="">Prise</label>
+                    <input type="number" name="prise" id="" class="form-control" placeholder="Prise" required>
                 </div>
                 <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="number" name="phone" id="" class="form-control" placeholder="Phone">
+                    <label for="">Description</label>
+                    <textarea class="form-control" name="description" placeholder="Description..." id="" cols="30" rows="10"></textarea>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-success" >Send</button>
@@ -64,15 +69,17 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
       </div>
 
+
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        
+        
         function submitForm(e){
             e.preventDefault()
             let form = $(e.target)
@@ -90,7 +97,7 @@
                         $("#messageText").html(response.success)
                         // hide loader
                         $("#loader").hide()
-                        console.log(response.result)
+                        console.log("REsponse====>",response)
                     }else{
                         $('#message').modal('show')
                         $(".modal-title").html("Error")

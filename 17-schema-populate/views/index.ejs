@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #2e2e2e;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <%- include('partials/navbar') %>
+
+    <h1 class="text-center display-4">Book Store</h1>
+    <div class="container">
+      <% books.forEach((book, loop)=>{ %>
+      <!-- First loop must open a row div -->
+      <% if (loop === 0){ %>
+      <div class="row"><%}else{%> <% if(loop % 4 === 0){ %></div>
+      <div class="row">
+        <%}%> <%}%>
+        <div class="col-md-3 mb-3">
+          <div class="card" style="width: 100%; height: 100%">
+            <div class="card-body bg-dark border p-4">
+              <h5 class="card-title"><%= book.title%></h5>
+              <p class="card-text">Author: <%= book.author.name%></p>
+              <div style="bottom: 5%; position: absolute;">
+                <a href="/books/<%= book._id%>" class="btn btn-primary"
+                  >Go To Book</a
+                >
+                <a
+                  href="javascript:;"
+                  class="btn btn-warning"
+                  onclick="showDescription(`<%= book.title%>`,`<%= book.description%>`)"
+                  >Description</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Only in last loop closing row div -->
+        <% if(loop == books.length -1){ %>
+      </div>
+      <%}%> <%})%>
+    </div>
+    <div id="message" class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-dark" id="messageText">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      function showDescription(title, description) {
+        $(".modal-title").html(title);
+        $("#messageText").text(description);
+        $("#message").modal("show");
+      }
+    </script>
+  </body>
+</html>

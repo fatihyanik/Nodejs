@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book.title%></title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #2e2e2e;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+
+    <%- include('partials/navbar') %>
+    <h1 class="text-center display-3"><%= book.title%></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Author: <strong><%= book.author.name%></strong></p>
+                <p>Author Country: <strong><%= book.author.address.country%></strong></p>
+                <p>Pages: <strong><%= book.pages%></strong></p>
+                <p>Prise: <strong><%= book.prise%></strong></p>
+                <p>Description: <strong><%= book.description%></strong></p>
+                <a href="/" class="btn btn-success">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

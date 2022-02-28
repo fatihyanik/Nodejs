@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #2e2e2e;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <h1 class="text-center bg-danger display-4">Error</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <pre class="text-warning display-7"><%= error%></pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
