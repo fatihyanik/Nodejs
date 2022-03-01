@@ -20,6 +20,7 @@ app.use('view', express.static(__dirname+"/views"))
 // for parsing url and body for request
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use('/bootstrap', express.static(path.join(__dirname , 'node_modules/bootstrap')))
 app.use('/jquery', express.static(path.join(__dirname , '/node_modules/jquery')))
 
