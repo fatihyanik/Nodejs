@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h2>Upload file</h2>
 
     <div>
-        <label for="usernameInp">User Name</label>
-        <input id="usernameInp" type="text">
+        <label for="nameInp">Name</label>
+        <input id="nameInp" type="text">
     </div>
     <div>
-        <label for="fileInp">User Image</label>
+        <label for="categorySelect">category</label>
+        <select id="categorySelect">
+            <option value="nature" selected>nature</option>
+            <option value="people">people</option>
+            <option value="animals">animals</option>
+            <option value="food">food</option>
+            <option value="tech">tech</option>
+        </select>
+    </div>
+    <div>
+        <label for="descriptionTextArea">Description</label>
+        <textarea id="descriptionTextArea" ></textarea>
+    <div>
+        <label for="fileInp">image</label>
         <input id="fileInp" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
     </div>
     <button id="submitBtn">submit</button>
 
-    <script>
-        const usernameInp = document.querySelector('#usernameInp');
-        const fileInp = document.querySelector('#fileInp');
-        const submitBtn = document.querySelector('#submitBtn');
 
-        submitBtn.addEventListener('click', async(e)=>{
-            
-            //console.log(fileInp.files);
-            e.preventDefault();
-            // FormDAta is a class that will allow us to send data to server side which contains binary or string
+    <script>
+        // get elements from DOM
+        const nameInp = document.getElementById('nameInp');
+        const categorySelect = document.getElementById('categorySelect');
+        const descriptionTextArea = document.getElementById('descriptionTextArea');
+        const fileInp = document.getElementById('fileInp');
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.addEventListener('click', async (e) => {
+            // build formdata object to be sent to server side
             const formData = new FormData();
-            // add the username value (which is string) to formData
-            formData.append('username', usernameInp.value)
-            // add the file from fileInp to formData
-            formData.append('userImage', fileInp.files[0])
-            // send data to server side using fetch 
+            formData.append('name', nameInp.value);
+            formData.append('category', categorySelect.value);
+            formData.append('description', descriptionTextArea.value);
+            formData.append('file', fileInp.files[0]);
+
+            // use fetch to send the data
             const response = await fetch('/savedata', {
                 method: 'POST',
                 body: formData
-            })
-            if(response.status === 413){
-                alert('file size is greater than 2 mb')
-            }else{
-                const result = await response.json();
-                console.log(result);
-                if(result === 'done'){
-                    alert('thank you the file has been uploaded')
-                }
+            });
+            // check the response
+            const result = await response.json()
+            if (result === 'done') {
+                // if ok, redirect to the index page
+                alert('saving data is done')
+            } else {
+                // if not ok, show the error
+                alert('error with saving data');
             }
+            
         })
     </script>
-
 </body>
+
 </html>

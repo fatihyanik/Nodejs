@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <% data.forEach(image => { %> 
+
+                <div class="col-md-4 col-lg-3 col-xs-12">
+                    <img class="img-fluid" src="<%= image.url %>" alt="<%= image.name %>" />
+                    <h2><%= image.name %></h2>
+                    <h3><%= image.category %></h3>
+                    <p><%= image.description %></p>
+                </div>
+
+
+            <% }) %> 
+            </div>
+        </div>
+</body>
+</html>
