@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp1" type="text">
+    <input id="inp2" type="text">
+    <button id="btn1">+</button>
+    <span id="result"></span>
+</body>
+<script>
+    const btn = document.getElementById('btn1');
+    const inp1 = document.getElementById('inp1');
+    const inp2 = document.getElementById('inp2');
+    const resultSpan = document.getElementById('result');
+    btn.addEventListener('click', ()=>{
+        resultSpan.textContent = Number(inp1.value) + Number(inp2.value)
+    })
+</script>
+</html>
